@@ -25,7 +25,17 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
+
+    - name : build docker image
+      run: | 
+        docker build -t samueljimenezdev/docker-graphql:1.0.1 . 
         
+    - name : push docker image
+      run: | 
+        docker push samueljimenezdev/docker-graphql:1.0.1 . 
+      
+    
+      
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
