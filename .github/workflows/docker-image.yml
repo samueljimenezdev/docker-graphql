@@ -46,7 +46,7 @@ jobs:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: | 
         docker push samueljimenezdev/docker-graphql:$NEW_VERSION
-        ocker push samueljimenezdev/docker-graphql:latest
+        docker push samueljimenezdev/docker-graphql:latest
         
 
       
